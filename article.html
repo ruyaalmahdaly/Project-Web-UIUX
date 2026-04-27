@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - Duo Green Sheet</title>
+
+    <!-- FONT SAMA KAYAK HOME -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR (SAMA PERSIS DENGAN HOME) -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="LogoNavbar.svg" alt="Logo">
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="article.html" class="active">Article</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="#">FAQ</a></li>
+    </ul>
+
+    <div class="nav-actions">
+        <button class="icon-btn">
+            <img src="Icon/Shopping-cart.svg" width="24">
+        </button>
+        <button class="btn-profile">
+            <img src="Icon/User.svg" width="24">
+            Profile
+        </button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="article-hero">
+    <h1>Perdalam Pemahamanmu Disini!</h1>
+    <p>
+        Temukan berbagai artikel seputar hidup sehat, urban farming, dan solusi ramah lingkungan
+        untuk kehidupan modern.
+    </p>
+</section>
+
+<!-- GRID -->
+<section class="article-section">
+    <div class="article-grid">
+
+        <!-- CARD -->
+        <div class="article-card">
+            <img src="Article1.svg">
+            <div class="article-content">
+                <h3>Sustainability</h3>
+                <p>Membahas pentingnya menjaga lingkungan dengan mengurangi limbah.</p>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <img src="Article2.svg">
+            <div class="article-content">
+                <h3>Urban Farming</h3>
+                <p>Mengajak masyarakat menanam sendiri di rumah dengan cara praktis.</p>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <img src="Article3.svg">
+            <div class="article-content">
+                <h3>Healthy Lifestyle</h3>
+                <p>Pola hidup sehat melalui konsumsi bahan alami yang berkelanjutan.</p>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <img src="Article3.svg">
+            <div class="article-content">
+                <h3>Healthy Lifestyle</h3>
+                <p>Pola hidup sehat melalui konsumsi bahan alami yang berkelanjutan.</p>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+        </div>
+
+        <div class="article-card extra hidden">
+            <img src="Article1.svg">
+            <div class="article-content">
+                <h3>Sustainability</h3>
+                <p>Membahas pentingnya menjaga lingkungan dengan mengurangi limbah.</p>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+            <div class="article-card extra hidden"></div>
+        </div>
+        
+        <div class="article-card extra hidden">
+            <img src="Article2.svg">
+            <div class="article-content">
+                <h3>Urban Farming</h3>
+                <p>Mengajak masyarakat menanam sendiri di rumah dengan cara praktis.</p>
+                <a href="#">Baca Selengkapnya</a>
+                <div class="article-card extra hidden"></div>
+            </div>
+        </div>
+    
+        <div class="article-card extra hidden">
+            <img src="Article3.svg">
+            <div class="article-content">
+                <h3>Healthy Lifestyle</h3>
+                <p>Pola hidup sehat melalui konsumsi bahan alami yang berkelanjutan.</p>
+                <a href="#">Baca Selengkapnya</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- LOAD MORE -->
+    <div class="load-more">
+        <button id="btn-toggle">Tampilkan Lebih banyak ⌵</button>
+    </div>
+</section>
+
+<!-- FOOTER (SAMA DENGAN HOME) -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <img src="LogoFooter.svg" alt="Logo" class="footer-logo">
+            <p>Copyright ©2026 DuoGreenSheet<br>All rights reserved</p>
+            <div class="social-links">
+                <a href="#"><img src="instagramicon.svg" alt="IG"></a>
+                <a href="#"><img src="TwitterIcon.svg" alt="Twitter"></a>
+                <a href="#"><img src="YoutubeIcon.svg" alt="YT"></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Article</a></li>
+                <li><a href="#">Catalog</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#">Help center</a></li>
+                <li><a href="#">Terms of service</a></li>
+                <li><a href="#">Legal</a></li>
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Status</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Stay up to date</h3>
+            <div class="newsletter">
+                <input type="email" placeholder="Your email address">
+                <button type="submit">➤</button>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('btn-toggle');
+    const extraCards = document.querySelectorAll('.article-card.extra');
+
+    btn.addEventListener('click', function() {
+
+        const isHidden = extraCards[0].classList.contains('hidden');
+
+        if (isHidden) {
+            extraCards.forEach(card => {
+                card.classList.remove('hidden');
+            });
+            btn.innerHTML = "Tampilkan lebih sedikit ⌃";
+        } else {
+            extraCards.forEach(card => {
+                card.classList.add('hidden');
+            });
+            btn.innerHTML = "Tampilkan lebih banyak ⌵";
+        }
+    });
+});
+</script>
+
+</body>
+</html>

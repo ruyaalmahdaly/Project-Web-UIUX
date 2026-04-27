@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Duo Green Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-transition">
+    <div class="container">
+        <div class="right-side">
+            <div class="login-form">
+                <div class="logo">
+                    <img src="Logo Duo Green Sheet.svg" alt="Logo">
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div> <!-- INI BARU -->
+                    <div class="step active" id="step1"></div>
+                    <div class="step" id="step2"></div>
+                    <div class="step" id="step3"></div>
+                </div>
+            </div>
+            <h2 id="mainTitle">Sign Up</h2>
+            <div class="form-content"> <!-- TAMBAHAN BARU -->
+                <form id="signupForm">
+                    <label>First Name</label>
+                    <input type="text" placeholder="First name">
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Last name">
+                    <label>Email</label>
+                    <input type="email" placeholder="Email">
+                    <label>Password</label>
+            <div class="password-field">
+                <input type="password" id="passwordInput" placeholder="Password" oninput="checkForm()">
+                <span class="eye-icon" onclick="togglePassword()">
+                    <img id="eyeIcon" src="Icon/weui_eyes-off-filled.svg" alt="Toggle">
+                </span>
+            </div>
+        </form>
+        <div id="verificationSection" style="display: none;">
+            <p style="margin-bottom: 20px; color: #666;">Verification code sent via email</p>
+            <div class="code-inputs" style="display:flex; gap: 15px; margin-bottom: 20px;">
+                <input type="text" maxlength="1" class="code-box">
+                <input type="text" maxlength="1" class="code-box">
+                <input type="text" maxlength="1" class="code-box">
+                <input type="text" maxlength="1" class="code-box">
+            </div>
+            <p style="font-size: 0.9rem;">Haven't received the code? 
+                <a href="#" style="color: #4b6e22; font-weight: bold;">Resend it</a>
+            </p>
+        </div>
+        <div id="addressSection" style="display: none;">
+            <label>Your City</label>
+            <select id="citySelect" onchange="checkAddressForm()">
+                <option value="" disabled selected>Select city</option>
+                <option value="Makassar">Makassar</option>
+                <option value="Jakarta">Jakarta</option>
+                <option value="Surabaya">Surabaya</option>
+                <option value="Bekasi">Bekasi</option>
+            </select>
+            <label>Address details</label>
+            <input type="text" placeholder="Write here">
+            <div style="display: flex; gap: 15px;">
+                <div style="flex: 1;">
+                    <label>Subdistrict</label>
+                    <select><option>Select here</option></select>
+                </div>
+                <div style="flex: 1;">
+                    <label>RT/RW</label>
+                    <select><option>Select here</option></select>
+                </div>
+            </div>
+
+            <label>Postal code</label>
+            <input type="text" placeholder="Postal code">
+        </div>
+    </div> <!-- PENUTUP -->
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="window.location.href='index.html'">Already have an account</button>
+                    <button id="doneBtn" class="btn-primary" disabled>Next →</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="left-side">
+            <div class="welcome-text">
+                <span class="hello-label">Hi There</span>
+                <h1>Welcome!</h1>
+            </div>
+        </div>
+    </div>
+    <div id="loadingModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="spinner"></div> <p>Tunggu ya...</p>
+            <h3>Sedang Diproses</h3>
+        </div>
+    </div>
+<script>  
+// FUNGSI PINDAH KE VERIFIKASI (STEP 2)
+    function goToVerification() {
+        document.getElementById('signupForm').style.display = 'none';
+        document.getElementById('mainTitle').innerText = "Account Verification";
+        document.getElementById('mainTitle').innerText = "Set Your Address";
+        
+        // Aktifkan progress
+        document.querySelectorAll('.step')[1].classList.add('active');
+        document.getElementById('progressFill').style.width = "50%";
+        
+        // Tampilkan verifikasi
+        document.getElementById('verificationSection').style.display = 'block';
+        
+        // UPDATE TOMBOL
+        const doneBtn = document.getElementById('doneBtn');
+        doneBtn.innerText = "Verify";
+        doneBtn.disabled = false; // <-- INI YANG PENTING: Harus false supaya bisa diklik
+        doneBtn.classList.add("active");
+        doneBtn.onclick = verifyAccount; // Arahkan ke fungsi verifikasi
+    }
+
+    // FUNGSI VERIFIKASI (STEP 3)
+    function verifyAccount() {
+        // Cek apakah kode sudah diisi (opsional)
+        document.getElementById('verificationSection').style.display = 'none';
+        document.getElementById('addressSection').style.display = 'block'; // Pastikan id ini ada di HTML
+        
+        document.getElementById('mainTitle').innerText = "Set your Address";
+        document.querySelectorAll('.step')[2].classList.add('active');
+        document.getElementById('progressFill').style.width = "100%";
+
+        const doneBtn = document.getElementById('doneBtn');
+        doneBtn.innerText = "Done";
+        doneBtn.onclick = showLoading; // <-- INI YANG KURANG: Hubungkan ke showLoading!
+    }
+    function showLoading() {
+    // Tampilkan modal
+    const modal = document.getElementById('loadingModal');
+    modal.style.display = 'flex';
+    
+    // Simulasi proses (bisa dihapus atau disesuaikan nanti saat ada server)
+    setTimeout(() => {
+        alert("Pendaftaran Berhasil!");
+        modal.style.display = 'none';
+        window.location.href = 'home.html'
+    }, 3000); // Modal muncul selama 3 detik
+    }
+</script>
+
+    <script>
+        // Fungsi Toggle Password (sama seperti Login)
+        function togglePassword() {
+            const passwordInput = document.getElementById("passwordInput");
+            const eyeIcon = document.getElementById("eyeIcon");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                eyeIcon.src = "Icon/weui_eyes-on-filled.svg";
+            } else {
+                passwordInput.type = "password";
+                eyeIcon.src = "Icon/weui_eyes-off-filled.svg";
+            }
+        }
+
+        // Fungsi Cek Form (Tombol aktif jika semua terisi)
+        function checkForm() {
+            // Hanya ambil input yang ada di dalam #signupForm
+            const form = document.getElementById('signupForm');
+            const inputs = form.querySelectorAll('input');
+            const doneBtn = document.getElementById('doneBtn');
+            let allFilled = true;
+            
+            inputs.forEach(input => { 
+                if(input.value.trim() === "") allFilled = false; 
+            });
+
+            if (allFilled) {
+                doneBtn.disabled = false;
+                doneBtn.classList.add("active");
+                // Hubungkan ke fungsi verifikasi saat tombol diklik
+                doneBtn.onclick = goToVerification;
+            } else {
+                doneBtn.disabled = true;
+                doneBtn.classList.remove("active");
+            }
+        }
+    </script>
+    
+</body>
+</html>

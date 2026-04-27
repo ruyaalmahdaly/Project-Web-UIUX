@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Log In - Duo Green Sheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-transition">
+    <div class="container">
+        <div class="left-side">
+            <div class="welcome-text">
+                <span class="hello-label">Hello</span>
+                <h1>Welcome Back!</h1>
+            </div>
+        </div>
+        
+        <div class="right-side">
+            <div class="login-form">
+                <div class="logo">
+                    <img src="Logo Duo Green Sheet.svg">
+                </div>
+                
+                <h2>Log In</h2>
+                
+                <form>
+                    <label>Username</label>
+                    <input type="text" placeholder="Ex. ruyasha_">
+                    
+                    <label>Email</label>
+                    <input type="email" placeholder="Email">
+                    
+                    <label>Password</label>
+                    <div class="password-field">
+                        <input type="password" id="passwordInput" placeholder="Password" oninput="checkForm()">
+                        <span class="eye-icon" onclick="togglePassword()">
+                            <img id="eyeIcon" src="Icon/weui_eyes-off-filled.svg" alt="Toggle">
+                        </span>
+                    </div>
+                </form>
+                
+                <div class="divider">or login with</div>
+                
+            <button class="btn-google">
+                <img src="Icon/GoogleVector.svg" alt="Google"> Google Account
+            </button>
+                
+                <div class="form-actions">
+                    <button class="btn-secondary" onclick="window.location.href='signup.html'">Don't have an account</button>
+                    <button id="doneBtn" class="btn-primary" disabled>Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    // Fungsi untuk mengubah visibility password
+    function togglePassword() {
+        const passwordInput = document.getElementById("passwordInput");
+        const eyeIcon = document.getElementById("eyeIcon");
+        
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            eyeIcon.src = "Icon/weui_eyes-on-filled.svg"; // Ubah ke icon mata terbuka
+        } else {
+            passwordInput.type = "password";
+            eyeIcon.src = "Icon/weui_eyes-off-filled.svg"; // Ubah ke icon mata tertutup
+        }
+    }
+
+    // Fungsi untuk mengaktifkan tombol jika semua field terisi
+    function checkForm() {
+        const username = document.querySelector('input[type="text"]').value;
+        const email = document.querySelector('input[type="email"]').value;
+        const password = document.getElementById("passwordInput").value;
+        const doneBtn = document.getElementById("doneBtn");
+
+        if (username !== "" && email !== "" && password !== "") {
+            doneBtn.disabled = false;
+            doneBtn.classList.add("active"); // Tambahkan class untuk warna hijau
+        } else {
+            doneBtn.disabled = true;
+            doneBtn.classList.remove("active");
+        }
+    }
+</script>
+</body>
+</html>

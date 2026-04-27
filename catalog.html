@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog - Duo Green Sheet</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR (SAMA PERSIS HOME) -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="LogoNavbar.svg">
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="article.html">Article</a></li>
+        <li><a href="catalog.html" class="active">Catalog</a></li>
+        <li><a href="#">FAQ</a></li>
+    </ul>
+
+    <div class="nav-actions">
+        <button class="icon-btn">
+            <img src="Icon/Shopping-cart.svg">
+        </button>
+        <button class="btn-profile">
+            <img src="Icon/User.svg"> Profile
+        </button>
+    </div>
+</nav>
+
+
+<!-- SECTION CATALOG -->
+<section class="catalog-section">
+
+    <!-- TEXT KIRI -->
+    <div class="catalog-text">
+        <span class="badge">Coba Sekarang!</span>
+        <h1>Mulai Langkah<br>Kecilmu Hari Ini</h1>
+    </div>
+
+    <!-- PRODUCT -->
+    <div class="catalog-products">
+
+        <!-- CARD 1 -->
+        <div class="catalog-card">
+            <img src="Plantable Seed Sheet.svg">
+
+            <div class="catalog-overlay">
+                <h3>Plantable Sheet</h3>
+                <div class="price-row">
+                    <p class="price">Rp 100.000</p>
+
+                <div class="qty">
+                    <button class="minus">-</button>
+                    <span class="count">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+
+                <div class="catalog-btns">
+                    <button class="btn-cart">Masukkan Keranjang</button>
+                    <button class="btn-buy">Beli Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="catalog-card">
+            <img src="Edible Herb Sheet.svg">
+
+            <div class="catalog-overlay">
+                <h3>Edible Herb Sheet</h3>
+                <div class="price-row">
+                    <p class="price">Rp 100.000</p>
+                
+                <div class="qty">
+                    <button class="minus">-</button>
+                    <span class="count">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+                <div class="catalog-btns">
+                    <button class="btn-cart">Masukkan Keranjang</button>
+                    <button class="btn-buy">Beli Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- DECOR -->
+    <div class="circle-decor top"></div>
+    <div class="circle-decor bottom"></div>
+
+</section>
+
+
+<!-- FOOTER (SAMA HOME) -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <img src="LogoFooter.svg" alt="Logo" class="footer-logo">
+            <p>Copyright ©2026 DuoGreenSheet<br>All rights reserved</p>
+            <div class="social-links">
+                <a href="#"><img src="instagramicon.svg" alt="IG"></a>
+                <a href="#"><img src="TwitterIcon.svg" alt="Twitter"></a>
+                <a href="#"><img src="YoutubeIcon.svg" alt="YT"></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Article</a></li>
+                <li><a href="#">Catalog</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#">Help center</a></li>
+                <li><a href="#">Terms of service</a></li>
+                <li><a href="#">Legal</a></li>
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Status</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Stay up to date</h3>
+            <div class="newsletter">
+                <input type="email" placeholder="Your email address">
+                <button type="submit">➤</button>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+document.querySelectorAll('.qty').forEach(qtyBox => {
+    const minus = qtyBox.querySelector('.minus');
+    const plus = qtyBox.querySelector('.plus');
+    const count = qtyBox.querySelector('.count');
+
+    let value = 1;
+
+    plus.addEventListener('click', () => {
+        value++;
+        count.textContent = value;
+    });
+
+    minus.addEventListener('click', () => {
+        if (value > 1) {
+            value--;
+            count.textContent = value;
+        }
+    });
+});
+</script>
+
+</body>
+</html>
