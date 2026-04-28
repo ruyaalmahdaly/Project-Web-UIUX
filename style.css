@@ -21,337 +21,6 @@
     src: url('fonts/Narnoor-ExtraBold.ttf') format('truetype');
     font-weight: 800;
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body { height: 100vh; display: flex; }
-
-.container { display: flex; width: 100%; }
-
-/* Bagian Kiri (Hijau) */
-.left-side { 
-    flex: 1;
-    background: linear-gradient(180deg, #8dc63f 0%, #4b6e22 100%);
-    display: flex;
-    align-items: center;
-    padding-left: 80px;
-    color: white;
-}
-.hello-label {
-    background: #9DC043;
-    color: white;
-    padding: 5px 15px;
-    font-size: 29px;
-    font-weight:600;
-    font-family: 'Montserrat', sans-serif;
-}
-.left-side h1 {
-    font-family: 'NarNoor', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 500; /* Ini akan otomatis memanggil Narnoor-Bold.ttf */
- 
-}
-
-/* Bagian Kanan (Form) */
-.right-side {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white;
-}
-
-.login-form h2 {
-    margin-bottom: 15px; font-family: 'Montserrat', sans-serif;
-}
-.login-form { width: 400px; }
-
-.logo { display: flex; align-items: center; margin-bottom: 30px; gap: 10px; }
-
-input {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-
-.password-field {
-    position: relative;
-    width: 100%;
-}
-
-/* Input diberi padding kanan agar teks tidak menabrak icon */
-.password-field input {
-    width: 100%;
-    padding: 12px 40px 12px 12px; /* padding kanan 40px supaya teks tidak tertutup icon */
-    box-sizing: border-box;
-}
-
-/* Icon diposisikan absolut agar bisa masuk ke dalam input */
-.eye-icon {
-    position: absolute;
-    right: 12px;        /* Jarak dari sisi kanan */
-    top: 30%;           /* Menengahkan posisi secara vertikal */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-/* Atur ukuran icon */
-.eye-icon img {
-    width: 20px;
-    height: 20px;
-}
-
-.divider { text-align: center; margin: 20px 0; color: #777; font-size: 0.9rem; }
-
-.btn-google {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #4b6e22;
-    background: white;
-    color: #4b6e22;
-    border-radius: 6px;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;      /* vertical center */
-    justify-content: center;  /* horizontal center */
-    gap: 8px;                 /* jarak icon & teks */
-}
-
-.form-actions { display: flex; gap: 10px; margin-top: 20px; }
-
-.btn-secondary { flex: 1; padding: 12px; border: 1px solid #4b6e22; background: white; color: #4b6e22; border-radius: 6px; cursor: pointer; }
-.btn-primary {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    background: #aaa; /* Warna abu-abu saat belum aktif */
-    color: white;
-    border-radius: 6px;
-    cursor: not-allowed; /* Kursor dilarang */
-    transition: 0.3s;
-}
-
-/* Style tombol saat aktif */
-.btn-primary.active {
-    background: linear-gradient(90deg, #8dc63f 0%, #4b6e22 100%);
-    cursor: pointer;
-    font-display: block;
-}
-
-/* Memastikan input terhubung dengan fungsi checkForm */
-input {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-.right-side {
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* Opsional: Jika ingin memastikan input dan tombol juga ikut terupdate */
-.login-form input, 
-.login-form button, 
-.login-form label {
-    font-family: 'Montserrat', sans-serif;
-}
-/* Pastikan ukuran font tetap proporsional */
-.login-form h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* Container Utama */
-.container {
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
-    /* Transisi smooth untuk seluruh container */
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* Animasi Geser Smooth */
-.page-transition {
-    /* Animasi berjalan selama 300ms, persis seperti settingan Figma kamu */
-    animation: slideInOut 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-}
-
-@keyframes slideInOut {
-    0% {
-        opacity: 0;
-        transform: translateX(50px); /* Mulai dari agak ke kanan */
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);    /* Berhenti di posisi asli */
-    }
-}
-
-/* Tambahkan ini agar tidak ada "kedipan" saat transisi */
-body {
-    overflow-x: hidden; 
-}
-
-/* Tombol agar terlihat lebih interaktif (hover effect) */
-.btn-primary:not(:disabled) {
-    cursor: pointer;
-    transition: transform 0.2s ease, background 0.3s ease;
-}
-
-.btn-primary:not(:disabled):hover {
-    transform: translateY(-2px); /* Tombol sedikit naik saat di-hover */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Bagian Next Step SignUp */
-.progress-container { margin-bottom: 20px; }
-
-.progress-bar {
-    position: relative;
-    display: flex;
-    justify-content: space-between; /* INI KUNCI */
-    align-items: center;
-    background: #e0e0e0;
-    height: 4px;
-    width: 100%;
-    border-radius: 2px;
-}
-
-.step {
-    width: 12px;
-    height: 12px;
-    background: #e0e0e0;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.step.active {
-    background: #4b6e22;
-}
-.form-content {
-    min-height: 280px; /* sesuaikan dikit */
-}
-#signupForm,
-#verificationSection {
-    width: 100%;
-}
-
-.login-form {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Styling kotak kode verifikasi */
-.code-box {
-    width: 60px !important;
-    height: 60px !important;
-    font-size: 24px;
-    text-align: center;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.code-box:focus {
-    border-color: #4b6e22;
-    outline: none;
-}
-
-.progress-bar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background: #e0e0e0;
-    height: 4px;
-    width: 100%;
-    border-radius: 2px;
-}
-
-/* GARIS YANG GERAK */
-.progress-fill {
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    background: #4b6e22;
-    border-radius: 2px;
-    transition: width 0.4s ease;
-}
-
-/* STEP */
-.step {
-    height: 12px;
-    width: 12px;
-    background: #e0e0e0;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-/* STEP AKTIF */
-.step.active {
-    background: #4b6e22;
-}
-
-select {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background: white;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* Latar belakang buram */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Hitam transparan */
-    backdrop-filter: blur(5px); /* EFEK BURAM */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-/* Kotak Pop-up */
-.modal-content {
-    background: #4b6e22; /* Hijau tua */
-    color: white;
-    padding: 40px;
-    border-radius: 15px;
-    text-align: center;
-    width: 300px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-/* Spinner sederhana menggunakan CSS */
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid rgba(255,255,255,0.3);
-    border-top: 4px solid white;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
 
 /* INI HALAMAN HOME! */
 /* Navbar Styling */
@@ -359,56 +28,65 @@ select {
 body {
     display: block;
     margin: 0;
+    padding-top: 80px; /* biar konten ga ketutup navbar */
 }
+
+/* LOGO */
 .logo img {
-    padding-top: 40px; /* adjust sampai sejajar */
+    height: 40px;
+    padding-top: 0; /* FIX: hapus offset aneh */
 }
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    padding: 20px 80px;
-    padding-top: px;
+
+    padding: 0 80px; /* FIX: jangan pakai padding atas bawah */
     font-family: 'Montserrat', sans-serif;
+
     width: 100%;
     background: white;
-    
-    /* Tambahkan baris ini */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
-    
-    /* Tambahkan z-index agar shadow tidak tertutup konten di bawahnya */
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
-    
+    box-sizing: border-box;
 }
+
+/* NAV LINKS */
 .nav-links {
     display: flex;
     list-style: none;
     gap: 40px;
-    align-items: center; /* Memastikan teks menu sejajar dengan logo */
+    align-items: center;
     margin: 0;
     padding: 0;
 }
 
+/* LINK */
 .nav-links a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
 }
 
+/* ACTIVE */
 .nav-links a.active {
     color: #9DC043;
     font-weight: 700;
     border-bottom: 2px solid #9DC043;
 }
 
+/* ACTION BUTTON */
 .nav-actions { 
     display: flex; 
     gap: 20px; 
-    align-items: center; /* Memastikan ikon keranjang & tombol profil sejajar */
+    align-items: center;
 }
 
 /* Hero Section */
@@ -681,10 +359,11 @@ body {
 /* Overlay gradasi di bawah gambar */
 .card-overlay {
     position: absolute;
+    z-index: 2;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 30px 100px 30px 30px;
+    padding: 30px 30px 30px;
 
     background: linear-gradient(
         to top,
@@ -694,15 +373,25 @@ body {
     );
 
     color: white;
+    box-sizing: border-box;
 }
 
-.card-overlay h3 { font-family: 'NarNoor', sans-serif; font-size: 1.8rem; margin-bottom: 10px; }
+.card-overlay h3 { font-family: 'NarNoor', sans-serif; font-size: 25px; margin: 0 0 10px 0; }
+.card-overlay p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    margin: 0;
+    /* Batasi lebar teks agar tidak menabrak area tombol */
+    max-width: 85%; 
+    line-height: 1.4;
+}
 
 /* Tombol Panah */
 .arrow-btn {
     position: absolute;
-    bottom: 30px;
-    right: 30px;
+    z-index: 5;
+    bottom: 20px;
+    right: 20px;
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -817,13 +506,14 @@ body {
 .cert-container {
     display: flex;
     justify-content: center; /* Menjaga kartu tetap di tengah */
-    gap: 20px;               /* Jarak antar kartu */
+    gap: 10px;               /* Jarak antar kartu */
     flex-wrap: wrap;         /* Agar responsif di layar kecil */
+    max-width: 1300px;
 }
 .cert-card {
     background: white;
     color: #333;
-    width: 200px;            /* Lebar tetap agar tidak kelebaran */
+    width: 190px;            /* Lebar tetap agar tidak kelebaran */
     height: 350px;           /* Tinggi tetap untuk kesan rapi */
     border-radius: 20px;     /* Lengkungan sudut yang lembut */
     display: flex;
@@ -832,6 +522,7 @@ body {
     justify-content: center;
     padding: 20px;
     transition: transform 0.3s ease;
+    max-width: 200px;
 }
 
 .cert-card img {
@@ -910,7 +601,7 @@ body {
 
 .stat-card p { 
     margin-top: 10px; 
-    font-size: 14px; 
+    font-size: 12px; 
     color: #3C6C29; 
     font-weight: 600;
 }
@@ -1008,13 +699,13 @@ body {
     background: transparent;
     border: none;
     padding: 5px;
-    color: white;
+    color: #13210d;
     width: 100%;
 }
 .newsletter button {
     background: transparent;
     border: none;
-    color: white;
+    color: #3C6C29;
     padding: 10px;
     cursor: pointer;
 }
@@ -1026,7 +717,7 @@ body {
 /* HALAMAN ARTICLE */
 /* HERO ARTICLE */
 .article-hero {
-    padding: 80px 80px 80px;
+    padding: 50px 80px 80px;
     text-align: center;
     background-color: #FFF6D9;
 }
@@ -1136,9 +827,39 @@ body {
 /* TEXT */
 .catalog-text h1 {
     font-family: 'NarNoor', sans-serif;
-    font-size: 50px;
-    color: #3C6C29;
-    margin-top: 20px;
+    font-size: 40px;
+
+    margin-top: 10px;
+}
+.gradient-text {
+    /* Definisikan warna gradasi */
+    background: linear-gradient(
+        90deg, 
+        #3C6C29, /* Hijau tua */
+        #9DC043, /* Hijau muda */
+        #FBE357, /* Kuning */
+        #3C6C29  /* Kembali ke hijau tua untuk looping */
+    );
+    
+    /* Ukuran background harus lebih lebar agar bisa bergerak */
+    background-size: 300% 100%;
+    
+    /* Memotong background agar hanya muncul di dalam teks */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* Membuat warna teks transparan agar gradasi di belakangnya kelihatan */
+    color: transparent;
+    
+    /* Animasi */
+    animation: gradient-move 5s linear infinite;
+}
+
+/* Animasi menggeser posisi background */
+@keyframes gradient-move {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* PRODUCTS */
@@ -1154,6 +875,8 @@ body {
     height: 450px;
     border-radius: 20px;
     overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .catalog-card img {
@@ -1170,6 +893,7 @@ body {
     padding: 20px;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
 
     background: linear-gradient(
         to top,
@@ -1179,12 +903,18 @@ body {
     );
     color: white;
 }
+.catalog-overlay h3 { 
+    font-family: 'NarNoor', sans-serif;
+    font-size: 1.5rem; /* Sedikit dikecilkan agar tidak terlalu memakan tempat */
+    margin: 0 0 0px 0; /* Kurangi margin bawah */
+    line-height: 1.1;
+}
 
 .price-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0 20px;
+    margin: 10px 0;
 }
 
 .price {
@@ -1419,4 +1149,167 @@ body {
     width: 100%;
     height: 250px;
     object-fit: cover;
+}
+
+/* HALAMAN PROFILE*/
+.profile-page {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    padding: 50px 80px;
+    background: #FAFAFA;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.user-avatar { position: relative; width: 120px; margin: 0 auto 20px; }
+.user-avatar img { width: 100%; border-radius: 50%; }
+
+.profile-nav a {
+    display: block;
+    padding: 15px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.profile-nav a.active { background: #9DC043; color: white; }
+
+.form-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.input-group label { display: block; margin-bottom: 8px; color: #666; }
+.input-group input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.btn-edit {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #3C6C29;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* Sidebar & Avatar */
+.sidebar {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.user-avatar { 
+    position: relative; 
+    width: 120px; 
+    height: 120px;
+    margin: 0 auto 20px; 
+}
+
+.user-avatar img { 
+    width: 100%; 
+    height: 100%; 
+    border-radius: 50%; 
+    object-fit: cover;
+}
+
+/* POSISI KAMERA (Sesuai contoh gambar ke-2) */
+.camera-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+/* Navigasi Ikon & Teks Sejajar */
+.profile-nav a {
+    display: flex;
+    align-items: center; /* Membuat ikon dan teks sejajar vertikal */
+    gap: 15px;
+    padding: 15px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.profile-nav a.active { background: #9DC043; color: #0d1809; }
+
+/* Tombol Log Out dengan Hover Gelap */
+.logout-btn {
+    margin-top: 40px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #3C6C29;
+    background: transparent;
+    color: #3C6C29;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    background: #3C6C29; /* Warna hijau tua saat hover */
+    color: white;
+    font-weight: 600;
+}
+
+/* Warna Ikon Default (Outline/Gelap) */
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    transition: 0.3s;
+}
+
+/* Kondisi saat Aktif (Fill) */
+.nav-link.active .nav-icon {
+    /* Mengubah warna menjadi Hijau Tua #3C6C29 menggunakan filter */
+    filter: invert(28%) sepia(20%) saturate(1450%) hue-rotate(65deg) brightness(95%) contrast(85%);
+}
+
+/* Opsional: Tambahkan sedikit efek tebal saat aktif */
+.nav-link.active {
+    font-weight: 700;
+    color: #3C6C29;
+}
+
+/* ACTIVE STATE */
+.btn-profile.active {
+    background: #9DC043;
+    color: white;
+    border: none;
+    font-weight: 700;
 }

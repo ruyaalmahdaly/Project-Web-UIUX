@@ -1,0 +1,354 @@
+@font-face {
+    font-family: 'NarNoor';
+    src: url('fonts/Narnoor-Regular.ttf') format('truetype');
+    font-weight: 400; /* Normal */
+}
+
+@font-face {
+    font-family: 'NarNoor';
+    src: url('fonts/Narnoor-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'NarNoor';
+    src: url('fonts/Narnoor-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'NarNoor';
+    src: url('fonts/Narnoor-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { height: 100vh; display: flex; }
+
+.container { display: flex; width: 100%; }
+
+/* Bagian Kiri (Hijau) */
+.left-side { 
+    flex: 1;
+    background: linear-gradient(180deg, #8dc63f 0%, #4b6e22 100%);
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+    color: white;
+}
+.hello-label {
+    background: #9DC043;
+    color: white;
+    padding: 5px 15px;
+    font-size: 29px;
+    font-weight:600;
+    font-family: 'Montserrat', sans-serif;
+}
+.left-side h1 {
+    font-family: 'NarNoor', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 500; /* Ini akan otomatis memanggil Narnoor-Bold.ttf */
+ 
+}
+
+/* Bagian Kanan (Form) */
+.right-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.login-form h2 {
+    margin-bottom: 15px; font-family: 'Montserrat', sans-serif;
+}
+.login-form { width: 400px; }
+
+.logo { display: flex; align-items: center; margin-bottom: 30px; gap: 10px; }
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.password-field {
+    position: relative;
+    width: 100%;
+}
+
+/* Input diberi padding kanan agar teks tidak menabrak icon */
+.password-field input {
+    width: 100%;
+    padding: 12px 40px 12px 12px; /* padding kanan 40px supaya teks tidak tertutup icon */
+    box-sizing: border-box;
+}
+
+/* Icon diposisikan absolut agar bisa masuk ke dalam input */
+.eye-icon {
+    position: absolute;
+    right: 12px;        /* Jarak dari sisi kanan */
+    top: 30%;           /* Menengahkan posisi secara vertikal */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Atur ukuran icon */
+.eye-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.divider { text-align: center; margin: 20px 0; color: #777; font-size: 0.9rem; }
+
+.btn-google {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #4b6e22;
+    background: white;
+    color: #4b6e22;
+    border-radius: 6px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;      /* vertical center */
+    justify-content: center;  /* horizontal center */
+    gap: 8px;                 /* jarak icon & teks */
+}
+
+.form-actions { display: flex; gap: 10px; margin-top: 20px; }
+
+.btn-secondary { flex: 1; padding: 12px; border: 1px solid #4b6e22; background: white; color: #4b6e22; border-radius: 6px; cursor: pointer; }
+.btn-primary {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: #aaa; /* Warna abu-abu saat belum aktif */
+    color: white;
+    border-radius: 6px;
+    cursor: not-allowed; /* Kursor dilarang */
+    transition: 0.3s;
+}
+
+/* Style tombol saat aktif */
+.btn-primary.active {
+    background: linear-gradient(90deg, #8dc63f 0%, #4b6e22 100%);
+    cursor: pointer;
+    font-display: block;
+}
+
+/* Memastikan input terhubung dengan fungsi checkForm */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.right-side {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Opsional: Jika ingin memastikan input dan tombol juga ikut terupdate */
+.login-form input, 
+.login-form button, 
+.login-form label {
+    font-family: 'Montserrat', sans-serif;
+}
+/* Pastikan ukuran font tetap proporsional */
+.login-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Container Utama */
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    /* Transisi smooth untuk seluruh container */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Animasi Geser Smooth */
+.page-transition {
+    /* Animasi berjalan selama 300ms, persis seperti settingan Figma kamu */
+    animation: slideInOut 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+@keyframes slideInOut {
+    0% {
+        opacity: 0;
+        transform: translateX(50px); /* Mulai dari agak ke kanan */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);    /* Berhenti di posisi asli */
+    }
+}
+
+/* Tambahkan ini agar tidak ada "kedipan" saat transisi */
+body {
+    overflow-x: hidden; 
+}
+
+/* Tombol agar terlihat lebih interaktif (hover effect) */
+.btn-primary:not(:disabled) {
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn-primary:not(:disabled):hover {
+    transform: translateY(-2px); /* Tombol sedikit naik saat di-hover */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Bagian Next Step SignUp */
+.progress-container { margin-bottom: 20px; }
+
+.progress-bar {
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* INI KUNCI */
+    align-items: center;
+    background: #e0e0e0;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.step {
+    width: 12px;
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.step.active {
+    background: #4b6e22;
+}
+.form-content {
+    min-height: 280px; /* sesuaikan dikit */
+}
+#signupForm,
+#verificationSection {
+    width: 100%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling kotak kode verifikasi */
+.code-box {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.code-box:focus {
+    border-color: #4b6e22;
+    outline: none;
+}
+
+.progress-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #e0e0e0;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+/* GARIS YANG GERAK */
+.progress-fill {
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #4b6e22;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+/* STEP */
+.step {
+    height: 12px;
+    width: 12px;
+    background: #e0e0e0;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* STEP AKTIF */
+.step.active {
+    background: #4b6e22;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Latar belakang buram */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Hitam transparan */
+    backdrop-filter: blur(5px); /* EFEK BURAM */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Kotak Pop-up */
+.modal-content {
+    background: #4b6e22; /* Hijau tua */
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Spinner sederhana menggunakan CSS */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255,255,255,0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
