@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Produk - Duo Green Sheet</title>
+    <title>Detail Pemesanan - Duo Green Sheet</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -15,58 +15,61 @@
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo">
-            <img src="LogoNavbar.svg">
+            <img src="LogoNavbar.svg" alt="Duo Green Sheet">
         </div>
 
         <ul class="nav-links">
-            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="article.html">Article</a></li>
-            <li><a href="catalog.html">Catalog</a></li>
+            <li><a href="catalog.html" class="active">Catalog</a></li>
             <li><a href="#">FAQ</a></li>
         </ul>
 
         <div class="nav-actions">
             <button class="icon-btn">
-                <img src="Icon/Shopping-cart.svg">
+                <img src="Icon/Shopping-cart.svg" alt="Cart">
             </button>
             <button class="btn-profile">
-                <img src="Icon/User.svg"> Profile
+                <img src="Icon/User.svg" alt="User"> Profile
             </button>
         </div>
     </nav>
 
-        <!-- BACK BUTTON -->
+    <!-- BACK BUTTON -->
     <div class="back-btn">
-        <a href="catalog.html">Kembali</a>
+        <a href="catalog.html">← Kembali</a>
     </div>
 
+    <!-- MAIN CONTENT -->
     <div class="container">
         <h2 class="page-title">Detail Pemesanan</h2>
 
         <div class="checkout-grid">
 
+            <!-- LEFT SIDE -->
             <div class="left-side">
+
+                <!-- ADDRESS -->
                 <div class="card address-box">
                     <div class="address-content">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <strong>Rumah - Habibi Ibnu (+62-8765-4321-123)</strong>
-                            <p class="address-detail">
-                                Jl. Anggrek No. 12, Kel. Panakkukang, Kec. Panakkukang, Kota Makassar, Sulawesi Selatan
-                                90231
-                            </p>
-                            <a href="#" class="edit-link">Ubah Alamat</a>
-                        </div>
+                        <strong>Rumah - Habibi Ibnu (+62-8765-4321-123)</strong>
+                        <p class="address-detail">
+                            Jl. Anggrek No. 12, Kel. Panakkukang, Kec. Panakkukang, Kota Makassar,
+                            Sulawesi Selatan 90231
+                        </p>
+                        <a href="#" class="edit-link">Ubah Alamat</a>
                     </div>
-                    <i class="fas fa-chevron-right chevron-icon"></i>
+
+                    <span class="chevron-icon">›</span>
                 </div>
 
-                <div class="card">
-                    <!-- PRODUK 1 -->
+                <!-- PRODUCT -->
+                <div class="card product-card">
+
                     <div class="product-item">
                         <div class="left">
-                            <img src="Edible Herb Sheet Full.svg" class="product-img">
+                            <img src="Edible Herb Sheet Full.svg" alt="Edible Herb Sheet" class="product-img">
 
                             <div class="product-info">
                                 <span>Produk 1</span>
@@ -76,16 +79,15 @@
                         </div>
 
                         <div class="qty-control">
-                            <button>-</button>
+                            <button type="button">−</button>
                             <span>1</span>
-                            <button>+</button>
+                            <button type="button">+</button>
                         </div>
                     </div>
 
-                    <!-- PRODUK 2 -->
-                    <div class="product-item no-border">
+                    <div class="product-item">
                         <div class="left">
-                            <img src="Plantable Seed Sheet.svg" class="product-img">
+                            <img src="Plantable Seed Sheet.svg" alt="Plantable Seed Sheet" class="product-img">
 
                             <div class="product-info">
                                 <span>Produk 2</span>
@@ -95,78 +97,148 @@
                         </div>
 
                         <div class="qty-control">
-                            <button>-</button>
+                            <button type="button">−</button>
                             <span>1</span>
-                            <button>+</button>
+                            <button type="button">+</button>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="right-side">
-                    <div class="right-side">
-
-                        <!-- Catatan untuk penjual -->
-                        <div class="card seller-note">
-                            <div class="note-left">
-                                <img src="Clipboard.svg" class="note-icon">
-                                <span>Catatan untuk penjual</span>
-                            </div>
-
-                            <i class="fas fa-chevron-right note-arrow"></i>
-                        </div>
-
-
-                        <i class="fas fa-chevron-right chevron-icon"></i>
-
+                <!-- SELLER NOTE -->
+                <div class="card seller-note">
+                    <div class="note-left">
+                        <img src="Clipboard.svg" alt="Catatan" class="note-icon">
+                        <span>Catatan untuk penjual</span>
                     </div>
 
-                    <!-- SHIPPING -->
-                    <div class="card shipping-card">
+                    <span class="chevron-icon">›</span>
+                </div>
 
-                        <div class="shipping-content">
+                <!-- SHIPPING -->
+                <div class="card shipping-card">
+                    <div class="shipping-content">
 
-                            <!-- Header -->
-                            <div class="shipping-header">
-
-                                <div>
-                                    <h4>Metode Pengiriman</h4>
-                                    <p class="shipping-type">Standar</p>
-                                </div>
-
-                                <a href="#">Lihat Semua</a>
-
+                        <div class="shipping-header">
+                            <div>
+                                <h4>Metode Pengiriman</h4>
+                                <p class="shipping-type">Standar</p>
                             </div>
 
-                            <!-- Info -->
-                            <div class="shipping-item">
-
-                                <div class="shipping-row">
-                                    <img src="icon.jam.svg" class="shipping-icon-img">
-                                    <p class="shipping-desc">
-                                        Dijamin tiba 12 April - 20 April 2026
-                                    <p class="shipping-desc">
-                                        Dapat Voucher hingga Rp. 00.00 kalau telat
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                            <!-- Proteksi -->
-                            <div class="shipping-item">
-
-                                <div class="shipping-row">
-                                    <img src="icon.perisai.svg" class="shipping-icon-img">
-                                    <p class="shipping-desc">
-                                        Dijamin dengan proteksi pengiriman
-                                    <p class="shipping-desc">
-                                        Pengembalian barang kalau barang rusak/tidak layak pakai
-                                    </p>
-                                </div>
-                            </div>
-
+                            <a href="#">Lihat Semua</a>
                         </div>
+
+                        <div class="shipping-item">
+                            <img src="icon.jam.svg" alt="Estimasi" class="shipping-icon">
+
+                            <div class="shipping-text">
+                                <p class="shipping-desc">Dijamin tiba 12 April - 20 April 2026</p>
+                                <p class="shipping-desc">Dapat Voucher hingga Rp. 00.00 kalau telat</p>
+                            </div>
+                        </div>
+
+                        <div class="shipping-item">
+                            <img src="icon.perisai.svg" alt="Proteksi" class="shipping-icon">
+
+                            <div class="shipping-text">
+                                <p class="shipping-desc">Dijamin dengan proteksi pengiriman</p>
+                                <p class="shipping-desc">Pengembalian barang kalau barang rusak/tidak layak pakai</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="right-side">
+
+                <!-- PROMO -->
+                <div class="card promo-card">
+                    <div class="promo-header">
+                        <span class="promo-check">✔</span>
+                        <span>1 promo &amp; 1 voucher ongkir terpakai</span>
+                        <span class="chevron-icon">›</span>
+                    </div>
+
+                    <div class="promo-tags">
+                        <span class="tag-promo">% Promo</span>
+                        <span class="tag-ongkir">Gratis Ongkir</span>
+                    </div>
+                </div>
+
+                <!-- PAYMENT METHOD -->
+                <div class="card payment-method">
+                    <h4>Pilih Metode Pembayaran</h4>
+
+                    <div class="dropdown-item">
+                        <div class="dropdown-content">
+                            <span>E-Wallet</span>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-item">
+                        <div class="dropdown-content">
+                            <span>Bank Transfer</span>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-item selected-method">
+                        <div class="dropdown-content">
+                            <img src="logo-qris.png" alt="QRIS" class="qris-logo">
+                            <span>QRIS</span>
+                        </div>
+
+                        <input type="radio" checked>
+                    </div>
+                </div>
+
+                <!-- SUMMARY -->
+                <div class="card summary-card">
+                    <h4>Detail Pembayaran</h4>
+
+                    <div class="summary-row">
+                        <span>Subtotal Pesanan</span>
+                        <span>Rp. 200.000,00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Subtotal Pengiriman</span>
+                        <span class="discount-text">
+                            Rp. 35.000,00 <span class="negative">-Rp. 0</span>
+                        </span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Biaya Penanganan</span>
+                        <span>Gratis</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Total Diskon Ongkir</span>
+                        <span class="negative">-Rp. 0</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Voucher Diskon</span>
+                        <span class="negative">-Rp. 0</span>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="total-row">
+                        <span>Total Pesanan</span>
+                        <span class="total-price">Rp. 200.000,00</span>
+                    </div>
+
+                    <button class="btn-order">Pesan Sekarang</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 
 </body>
 
