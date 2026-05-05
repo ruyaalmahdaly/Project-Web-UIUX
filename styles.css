@@ -1,0 +1,657 @@
+/* styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.green {
+    color: #4CAF50;
+}
+
+.badge {
+    display: inline-block;
+    background: #4CAF50;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.badge.center {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 10px;
+}
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+.navbar{
+    background:#f4f4f4;
+    border-bottom:1px solid #e5e5e5;
+}
+
+/* CONTAINER NAV */
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:12px 30px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:22px;
+    font-weight:600;
+    color:#333;
+}
+
+.logo img{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.green{
+    color:#4CAF50;
+}
+
+/* MENU */
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#333;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#4CAF50;
+}
+
+.nav-links .active{
+    color:#4CAF50;
+    font-weight:600;
+}
+
+/* RIGHT SIDE (CART + PROFILE) */
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+/* BUTTON STYLE */
+.cart-btn,
+.profile-btn{
+    border:1px solid #ddd;
+    background:white;
+    padding:6px 14px;
+    border-radius:12px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    transition:0.3s;
+}
+
+.cart-btn:hover,
+.profile-btn:hover{
+    border-color:#4CAF50;
+    box-shadow:0 0 6px rgba(0,0,0,0.08);
+}
+
+/* ICON */
+.icon{
+    width:18px;
+    height:18px;
+    object-fit:contain;
+    display:block;
+}
+
+/* TEXT PROFILE */
+.profile-btn{
+    font-size:14px;
+    line-height:1;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+    .nav-links{
+        display:none; /* nanti bisa diganti hamburger */
+    }
+
+    .nav-container{
+        padding:12px 20px;
+    }
+
+    .profile-btn span{
+        display:none;
+    }
+}
+/* Hero Banner */
+.hero-banner {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(139, 195, 74, 0.3), rgba(76, 175, 80, 0.2));
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: #333;
+}
+
+.banner-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #2E7D32;
+}
+
+/* Mengapa Section */
+.mengapa-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #8BC34A 0%, #C5E1A5 50%, white 100%);
+}
+
+.mengapa-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.mengapa-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #1B5E20;
+}
+
+.mengapa-text p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.mengapa-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.mengapa-images img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.product-img-1 {
+    grid-row: span 2;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tentang Section */
+.tentang-section {
+    padding: 80px 0;
+    background: #FFF8E1;
+}
+
+.visi-misi {
+    margin-top: 30px;
+}
+
+.visi h3, .misi h3 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #4CAF50;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.bullet {
+    width: 15px;
+    height: 15px;
+    background: #4CAF50;
+    border-radius: 50%;
+}
+
+.visi {
+    margin-bottom: 40px;
+}
+
+.misi ol {
+    padding-left: 25px;
+}
+
+.misi li {
+    margin-bottom: 10px;
+}
+
+/* SECTION */
+.dilema-section{
+    padding:80px 0;
+}
+
+/* GRID 2 KOLOM */
+.dilema-content{
+    display:grid;
+    grid-template-columns: 0.9fr 1.1fr; /* kiri sedikit lebih kecil */
+    gap:60px;
+    align-items:stretch; /* ⭐ bikin tinggi kolom sama */
+}
+
+/* CONTAINER GAMBAR */
+.dilema-images{
+    height:100%;
+}
+
+/* GAMBAR COLLAGE */
+.dilema-images img{
+    width:100%;
+    height:100%;      /* ⭐ ikut tinggi teks */
+    object-fit:cover; /* crop biar tetap proporsional */
+    border-radius:20px;
+    display:block;
+}
+
+@media(max-width:900px){
+    .dilema-content{
+        grid-template-columns:1fr;
+    }
+
+    .dilema-images img{
+        height:260px; /* di HP jadi landscape */
+    }
+}
+
+/* Tantangan Section */
+.tantangan-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, white 0%, #E8F5E9 100%);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #1B5E20;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.section-title img {
+    width: 50px;
+    height: 50px;
+}
+
+.tantangan-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.tantangan-card {
+    text-align: center;
+    padding: 30px;
+}
+
+.tantangan-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.tantangan-card h4 {
+    color: #4CAF50;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.tantangan-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Bahan Section */
+.bahan-section {
+    padding: 80px 0;
+    background: #4CAF50;
+    color: white;
+}
+
+.bahan-section .section-title {
+    color: white;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.section-subtitle.light {
+    color: rgba(255,255,255,0.9);
+}
+
+.bahan-slider-container {
+    overflow-x: auto;
+    padding: 20px 0;
+    cursor: grab;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.5) transparent;
+}
+
+.bahan-slider-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.bahan-slider-container::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+}
+
+.bahan-slider-container::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.5);
+    border-radius: 10px;
+}
+
+.bahan-slider {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    width: max-content;
+}
+
+.bahan-card {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.bahan-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.bahan-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.bahan-overlay p {
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s;
+}
+
+.bahan-card:hover .bahan-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.bahan-card:hover .bahan-overlay p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bahan-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Sertifikasi Section */
+.sertifikasi-section {
+    padding: 80px 0;
+    background: #2E7D32;
+    color: white;
+}
+
+.sertifikasi-section .section-title.light {
+    color: white;
+}
+
+.sertifikasi-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.sertifikasi-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.sertifikasi-card:hover {
+    transform: translateY(-5px);
+}
+
+.sertifikasi-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.sertifikasi-card p {
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    background: #2E7D32;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+}
+
+.footer-brand .logo {
+    margin-bottom: 20px;
+}
+
+.footer-brand .logo span {
+    color: white;
+}
+
+.footer-brand p {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.social-links a:hover img {
+    opacity: 1;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.footer-column h4 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.newsletter {
+    display: flex;
+    background: #333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.newsletter input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+}
+
+.newsletter input::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.newsletter button {
+    background: #4CAF50;
+    border: none;
+    padding: 12px 15px;
+    cursor: pointer;
+}
+
+.newsletter button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .mengapa-content,
+    .dilema-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .sertifikasi-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .tantangan-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sertifikasi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .banner-content h1 {
+        font-size: 32px;
+    }
+}
