@@ -403,7 +403,7 @@ h1 {
     height: 20px;
     display: inline-block;
 
-    background: url('Icon/ClickFiks.svg') no-repeat center;
+    background: url('ClickFiks.svg') no-repeat center;
     background-size: contain;
 }
 .custom-radio {
