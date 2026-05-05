@@ -956,11 +956,17 @@ body {
 
 .btn-buy {
     flex: 1;
+    display: flex;
+    align-items: center;
     background: linear-gradient(to right, #FBE357, #FAFAFA);
     border: none;
     color: #3C6C29;
     padding: 10px;
     border-radius: 8px;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* DECOR */
