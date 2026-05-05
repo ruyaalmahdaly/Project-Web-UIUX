@@ -393,6 +393,25 @@ h1 {
     color: #666;
     font-size: 14px;
 }
+.custom-radio input {
+    display: none;
+}
+
+/* ICON DEFAULT (belum dipilih) */
+.radio-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+
+    background: url('Icon/ClickFiks.svg') no-repeat center;
+    background-size: contain;
+}
+.custom-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
 
 /* =========================
    PAYMENT SUMMARY
@@ -432,7 +451,7 @@ h1 {
 }
 
 .total-row span {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: bold;
     color: #2c4730;
 }
@@ -447,7 +466,7 @@ h1 {
     padding: 18px;
     border: none;
     border-radius: 14px;
-    background: #89a55b;
+    background: linear-gradient(to right, #9DC043, #3b6f2a);
     color: white;
     font-size: 18px;
     font-weight: bold;
