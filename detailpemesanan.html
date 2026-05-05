@@ -38,7 +38,7 @@
 
     <!-- BACK BUTTON -->
     <div class="back-btn">
-        <a href="home.html">Kembali</a>
+        <a href="catalog.html">Kembali</a>
     </div>
 
     <!-- MAIN CONTENT -->
@@ -174,23 +174,36 @@
 
                     <div class="dropdown-item">
                         <div class="dropdown-content">
+                            <img src="Icon/Wallet.svg" alt="QRIS" class="qris-logo">
                             <span>E-Wallet</span>
                         </div>
+                        <label class="custom-radio">
+                            <input type="radio" name="payment" checked>
+                            <span class="radio-icon"></span>
+                        </label>
                     </div>
 
                     <div class="dropdown-item">
                         <div class="dropdown-content">
+                            <img src="Icon/Bank.svg" alt="QRIS" class="qris-logo">
                             <span>Bank Transfer</span>
                         </div>
+                        <label class="custom-radio">
+                            <input type="radio" name="payment" checked>
+                            <span class="radio-icon"></span>
+                        </label>
                     </div>
 
                     <div class="dropdown-item selected-method">
                         <div class="dropdown-content">
-                            <img src="logo-qris.png" alt="QRIS" class="qris-logo">
+                            <img src="Icon/QRISLogo.svg" alt="QRIS" class="qris-logo">
                             <span>QRIS</span>
                         </div>
 
-                        <input type="radio" checked>
+                        <label class="custom-radio">
+                            <input type="radio" name="payment" checked>
+                            <span class="radio-icon"></span>
+                        </label>
                     </div>
                 </div>
 
@@ -205,9 +218,10 @@
 
                     <div class="summary-row">
                         <span>Subtotal Pengiriman</span>
-                        <span class="discount-text">
-                            Rp. 35.000,00 <span class="negative">-Rp. 0</span>
-                        </span>
+                        <div class="price-group">
+                            <span class="discount-text">Rp. 35.000,00</span>
+                            <span class="negative">-Rp. 0</span>
+                        </div>
                     </div>
 
                     <div class="summary-row">
