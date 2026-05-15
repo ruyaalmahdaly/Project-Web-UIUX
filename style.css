@@ -1776,3 +1776,376 @@ input:checked + .slider:before {
     font-weight: 600;
     cursor: pointer;
 }
+
+/* --- ABOUT HERO STYLING --- */
+.about-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    min-height: 90vh;
+    margin-bottom: -50px;
+    z-index: 1;
+
+    /* GRADIENT CREAM & BANNER */
+    background-image: 
+        linear-gradient(
+            to right, 
+            rgba(255, 251, 240, 1) 10%,  /* Warna Cream Solid di area teks */
+            rgba(255, 251, 240, 0.8) 20%, /* Mulai memudar */
+            rgba(255, 251, 240, 0) 100%   /* Transparan di area gambar */
+        ),
+        url('BannerAboutPages.svg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about-hero-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.about-hero-text {
+    max-width: 600px; /* Memastikan teks tidak terlalu lebar */
+}
+
+/* Badge "Kami Hadir" Hijau Petak */
+.badge-vibe {
+    background-color: #9DC043;
+    color: white;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.about-hero-text h1 {
+    font-family: 'NarNoor', sans-serif;
+    font-size: 4rem; /* Ukuran besar seperti di Home */
+    line-height: 1.1;
+    color: #3C6C29; /* Hijau Tua */
+    margin: 0;
+    font-weight: 500;
+}
+
+.about-hero-image {
+    flex: 1.2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-hero-image img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    /* Efek fade di sisi kiri gambar agar menyatu dengan background */
+    mask-image: linear-gradient(to right, transparent, black 20%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%);
+}
+
+/* Lengkungan Hijau Bawah (SVG Wave) */
+.hero-wave {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 3;
+}
+
+.hero-wave svg {
+    display: block;
+    width: 100%;
+    height: 120px;
+}
+/* --- REASON SECTION STYLING --- */
+.reason-section {
+    background-color: #9DC043; /* Hijau solid sesuai gambar */
+    padding: 80px 80px;
+    position: relative;
+    overflow: hidden;
+    min-height: 800px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.reason-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Bagian Teks */
+.reason-content {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.badge-white {
+    background-color: white;
+    color: #749149;
+    padding: 5px 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.title-white {
+    font-family: 'NarNoor', sans-serif;
+    font-size: 48px;
+    color: white;
+    margin: 0 0 30px 0;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.text-desc {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* Bagian Gambar Bertumpuk */
+.reason-image-area {
+    flex: 1;
+    position: relative;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-image-wrapper {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 550px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.main-image-wrapper img {
+    width: 100%;
+    display: block;
+}
+
+/* Kotak Dekorasi Belakang */
+.box-about-back {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #3C6C29;
+    top: -20px;
+    left: -20px;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.box-about-front {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #FFF6D9;
+    bottom: -20px;
+    right: -20px;
+    border-radius: 20px;
+    z-index: 1;
+}
+/* --- VISI MISI SECTION STYLING --- */
+.visi-misi-section {
+    padding: 60px 80px 40px;
+    background-color: #FAFAFA;
+    position: relative;
+    overflow: hidden;
+    min-height: 800px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.visi-misi-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+/* Badge Tentang */
+.badge-tentang {
+    background-color: #9DC043;
+    color: white;
+    padding: 6px 15px;
+    font-weight: 600;
+    font-size: 20px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+/* Layout Baris Visi & Misi */
+.visi-misi-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Timeline Vertical Line & Dot */
+.timeline-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 30px;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 15px;
+    width: 2px;
+    height: 120%; /* Menghubungkan titik atas ke bawah */
+    background-color: #3C6C29;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #FAFAFA;
+    border: 4px solid #3C6C29;
+    border-radius: 50%;
+    z-index: 2;
+    margin-top: 10px;
+}
+
+/* Judul & Teks */
+.title-green {
+    font-family: 'NarNoor', sans-serif;
+    font-size: 42px;
+    color: #3C6C29;
+    margin: 0 0 15px 0;
+    font-weight: 500;
+}
+
+.text-gray {
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+.misi-list {
+    padding-left: 20px;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.misi-list li {
+    margin-bottom: 5px;
+}
+
+/* --- DEKORASI --- */
+
+/* Lingkaran Hijau Atas Kiri */
+.circle-top-left {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #9DC043, #3C6C29);
+    border-radius: 50%;
+    top: -40px;
+    left: 100px;
+}
+
+/* Bukit-Bukit di Kanan Bawah */
+.hills-decor {
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hill {
+    border-radius: 100px 100px 0 0;
+}
+
+.hill-1 {
+    width: 130px;
+    height: 80px;
+    background-color: #FFF6D9; /* Cream */
+    margin-right: -20px;
+}
+
+.hill-2 {
+    width: 130px;
+    height: 100px;
+    background-color: #9DC043; /* Hijau Muda */
+    margin-right: -20px;
+    z-index: 2;
+}
+
+.hill-3 {
+    width: 130px;
+    height: 90px;
+    background-color: #3C6C29; /* Hijau Tua */
+    z-index: 1;
+}
+
+/* Titik Kuning Pojok Bawah */
+.yellow-dot-bottom {
+    position: absolute;
+    bottom: 20px;
+    right: 100px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #FBE357, #9DC043);
+    border-radius: 50%;
+}
+
+/* --- GLOBAL REUSABLE COMPONENTS --- */
+.badge-vibe-light { background: #9DC043; color: white; padding: 5px 15px; font-weight: 600; display: inline-block; margin-bottom: 15px; }
+.badge-vibe-white { background: white; color: #3C6C29; padding: 5px 15px; font-weight: 600; display: inline-block; margin-bottom: 15px; }
+
+/* --- SECTION 4: DILEMA --- */
+.dilema-section { padding: 0; background-color: #FAFAFA; }
+.dilema-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
+.dilema-image-collage img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.dilema-content { padding: 80px; display: flex; flex-direction: column; justify-content: center; }
+.title-green-large { font-family: 'NarNoor', sans-serif; font-size: 48px; color: #3C6C29; line-height: 1.1; margin-bottom: 25px; }
+.dilema-content p { font-family: 'Montserrat', sans-serif; font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 20px; }
+.source-text { font-weight: 600; color: #9DC043; }
+.source-text a { color: #9DC043; text-decoration: underline; }
+/* --- SECTION 5: TANTANGAN --- */
+.tantangan-section { padding: 100px 80px; background: #FFFBF0; text-align: center; }
+.header-center { margin-bottom: 60px; }
+.title-green-center { font-family: 'NarNoor', sans-serif; font-size: 48px; color: #3C6C29; margin-top: 10px; }
+.tantangan-grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1100px; margin: 0 auto; }
+.tantangan-card { text-align: center; padding: 20px; }
+.tantangan-card img { width: 80px; height: 80px; margin-bottom: 20px; }
+.tantangan-card h4 { font-family: 'Montserrat', sans-serif; font-size: 20px; color: #3C6C29; margin-bottom: 15px; font-weight: 700; }
+.tantangan-card p { font-family: 'Montserrat', sans-serif; font-size: 15px; color: #666; line-height: 1.5; }
+
+/* --- SECTION 6: BAHAN (DARK GREEN) --- */
+.bahan-section-new { 
+    padding: 100px 0; 
+    background-image: linear-gradient(rgba(60, 108, 41, 0.9), rgba(60, 108, 41, 0.9)), url('bannerbahan_about.svg'); 
+    background-size: cover;
+    text-align: center; 
+}
+.title-white-center { font-family: 'NarNoor', sans-serif; font-size: 50px; color: white; margin: 10px 0; }
+.subtitle-white { color: rgba(255,255,255,0.8); max-width: 800px; margin: 0 auto 50px; line-height: 1.6; font-family: 'Montserrat'; }
+.bahan-gallery { display: flex; justify-content: center; gap: 15px; padding: 0 40px; overflow-x: auto; }
+.bahan-gallery img { width: 220px; height: 350px; object-fit: cover; border-radius: 15px; border: 2px solid rgba(255,255,255,0.2); }
