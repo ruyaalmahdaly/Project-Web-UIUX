@@ -402,9 +402,13 @@ h1 {
     width: 20px;
     height: 20px;
     display: inline-block;
+    flex-shrink: 0;
 
     background: url('ClickFiks.svg') no-repeat center;
     background-size: contain;
+
+    border: none !important;
+    border-radius: 0 !important;
 }
 .custom-radio {
     display: flex;
@@ -603,4 +607,416 @@ h1 {
 }
 * {
     box-sizing: border-box;
+}
+
+/* --- MODAL STYLE --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px); /* Efek burem latar belakang */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+/* Kotak Berhasil (Hijau Gelap) */
+.modal-success-content {
+    background: #4b6e22; /* Hijau Tua */
+    padding: 50px 40px;
+    border-radius: 30px;
+    text-align: center;
+    width: 450px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Icon Centang dengan Badge Gerigi */
+.success-icon-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.check-badge {
+    width: 100px;
+    height: 100px;
+    background: #9DC043; /* Hijau Muda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Membuat bentuk gerigi/lingkaran bergelombang */
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px rgba(157, 192, 67, 0.2);
+}
+
+/* Pseudo-element untuk efek badge bergerigi */
+.check-badge::after {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    border: 4px dashed #9DC043;
+    border-radius: 50%;
+}
+
+.check-mark {
+    font-size: 50px;
+    color: white;
+}
+
+.success-text {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 40px;
+}
+
+/* Tombol Selesai */
+.btn-finish {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 60px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-finish:hover {
+    background: white;
+    color: #4b6e22;
+}
+
+/* Spinner Loading */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255,255,255,0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 1s linear infinite;
+}
+
+/* BOX LOADING */
+.modal-box {
+    background: #4b6e22;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    width: 400px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* OVERLAY */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+#modalSuccess {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 10000;
+
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* =========================
+   PAYMENT METHOD FIX
+========================= */
+
+.payment-method {
+    padding: 14px;
+}
+
+.payment-method h4 {
+    margin: 0 0 14px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #222;
+}
+
+/* Row utama: E-Wallet dan QRIS */
+.payment-main-row,
+.qris-row {
+    min-height: 42px;
+    border: 1.5px solid #999;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    background: #fff;
+}
+
+/* Icon kiri payment */
+.payment-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+/* Dropdown icon kanan */
+.dropdown-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+/* QRIS logo */
+.qris-logo {
+    width: 38px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* =========================
+   BANK DROPDOWN OPEN / CLOSE
+========================= */
+
+.bank-transfer-head {
+    cursor: pointer;
+}
+
+/* animasi buka tutup */
+.bank-options {
+    overflow: hidden;
+    max-height: 200px;
+    opacity: 1;
+    transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.2s ease;
+}
+
+/* kondisi tertutup */
+.bank-transfer-dropdown.closed .bank-options {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+}
+
+/* saat tertutup, garis bawah header hilang supaya rapi */
+.bank-transfer-dropdown.closed .bank-transfer-head {
+    border-bottom: none;
+    padding-bottom: 10px;
+}
+
+/* saat terbuka, garis bawah muncul */
+.bank-transfer-dropdown.open .bank-transfer-head {
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 10px;
+}/* supaya box tetap rapi saat tertutup */
+
+
+
+/* =========================
+   PAYMENT INTERACTIVE FIX
+========================= */
+
+.payment-method {
+    padding: 14px;
+}
+
+/* BOX DROPDOWN UMUM */
+.payment-dropdown-box,
+.bank-transfer-dropdown,
+.qris-box {
+    border: 1.5px solid #999;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 14px;
+}
+
+/* HEADER DROPDOWN */
+.payment-dropdown-head,
+.bank-transfer-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+.payment-dropdown-box.open .payment-dropdown-head,
+.bank-transfer-dropdown.open .bank-transfer-head {
+    border-bottom: 1px solid #aaa;
+}
+
+.payment-dropdown-box.closed .payment-dropdown-head,
+.bank-transfer-dropdown.closed .bank-transfer-head {
+    border-bottom: none;
+}
+
+/* ICON */
+.payment-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.dropdown-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+/* OPTION LIST */
+.ewallet-options,
+.bank-options {
+    overflow: hidden;
+    max-height: 220px;
+    opacity: 1;
+    padding: 8px 14px 10px;
+    transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.2s ease;
+}
+
+.payment-dropdown-box.closed .ewallet-options,
+.bank-transfer-dropdown.closed .bank-options {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* OPTION ITEM */
+.payment-option,
+.bank-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    cursor: pointer;
+}
+
+.payment-option-info,
+.bank-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ewallet-logo,
+.bank-logo {
+    width: 48px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.payment-option-info span,
+.bank-info span {
+    font-size: 15px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* RADIO CUSTOM */
+.payment-option input,
+.bank-option input,
+.qris-row input {
+    display: none;
+}
+
+/* Default icon bulat */
+.radio-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    flex-shrink: 0;
+
+    background: url('ClickFiks.svg') no-repeat center;
+    background-size: contain;
+}
+
+/* Saat dipilih */
+.payment-option input:checked + .radio-icon,
+.bank-option input:checked + .radio-icon,
+.qris-row input:checked + .radio-icon {
+    background: url('ClickFiks2.svg') no-repeat center;
+    background-size: contain;
+}
+
+/* QRIS ROW */
+.qris-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: none;
+    margin-bottom: 0;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+.qris-logo {
+    width: 38px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* QRIS PANEL */
+.qris-payment-panel {
+    display: none;
+    padding: 18px 14px 20px;
+    border-top: 1px solid #aaa;
+    text-align: center;
+}
+
+.qris-payment-panel.active {
+    display: block;
+}
+
+.qr-code-img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.qris-info {
+    font-size: 14px;
+    color: #555;
+    margin: 0 0 10px;
+}
+
+.qris-timer {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3C6C29;
+}
+
+#qrisCountdown {
+    color: #3C6C29;
+    font-weight: 700;
+}
+
+/* Override style lama */
+.selected-method {
+    background: #fff;
+    border-color: #999;
 }
