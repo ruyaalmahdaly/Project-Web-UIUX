@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Duo Green Sheet</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="LogoNavbar.svg">
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="article.html">Article</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="Faq.html">FAQ</a></li>
+    </ul>
+
+    <div class="nav-actions">
+        <button class="icon-btn">
+            <img src="Icon/Shopping-cart.svg">
+        </button>
+        <button class="btn-profile active">
+            <img src="Icon/UserWhite.svg"> Profile
+        </button>
+    </div>
+</nav>
+
+<!-- PROFILE -->
+<main class="profile-page">
+    <aside class="sidebar">
+        <div class="user-avatar">
+            <img src="avatar.svg" alt="User">
+            <button class="camera-btn">
+            <img src="Camera.svg" alt="User" width="20">
+            </button>
+        </div>
+
+        <h3>Habibi Ibnu</h3>
+
+        <nav class="profile-nav">
+            <a href="profile.html">
+                <span class="icon">
+                    <img src="User.svg" alt="Profile">
+                </span>
+                Profile
+            </a>
+
+            <a href="pesanan_profile.html">
+                <span class="icon">
+                    <img src="Document.svg" alt="Profile">
+                </span> 
+                Pesanan
+            </a>
+
+            <a href="settings.html" class="active">
+                <span class="icon">
+                    <img src="Settings-alt.svg" alt="settings">
+                </span> 
+                Settings
+            </a>
+        </nav>
+
+        <button class="logout-btn" onclick="window.location.href='index.html'">Log Out</button>
+
+    </aside>
+
+    <section class="profile-content">
+        <h2 class="section-title">Settings</h2>
+
+        <div class="form-card">
+            <div class="card-header-icon">
+                <img src="Icon/material-symbols_security.svg" alt="Lock" width="24">
+                <h3>Security & Password</h3>
+            </div>
+            
+            <div class="settings-row">
+                <div class="settings-info">
+                    <h4>Ganti Password</h4>
+                    <p>Terakhir diganti 3 bulan lalu</p>
+                </div>
+                <button class="btn-outline-small">Update</button>
+            </div>
+
+            <div class="settings-row">
+                <div class="settings-info">
+                    <h4>Autentikasi Dua Faktor</h4>
+                    <p>Amankan akun Anda dengan kode verifikasi</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <div class="card-header-icon">
+                <img src="Icon/notification.svg" alt="Bell" width="24">
+                <h3>Notifications</h3>
+            </div>
+
+            <div class="settings-row">
+                <div class="settings-info">
+                    <h4>Email Pembayaran</h4>
+                    <p>Kirim bukti transaksi ke email saya</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="settings-row">
+                <div class="settings-info">
+                    <h4>Update Promo</h4>
+                    <p>Informasi produk baru dan diskon eksklusif</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-card danger-card">
+            <h3>Hapus Akun</h3>
+            <p>Setelah dihapus, data akun Anda tidak dapat dikembalikan.</p>
+            <button class="btn-delete">Hapus Akun Permanen</button>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

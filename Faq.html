@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Duo Green Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="LogoNavbar.svg" alt="Duo Green Sheet">
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="article.html">Article</a></li>
+            <li><a href="catalog.html">Catalog</a></li>
+            <li><a href="faq.html" class="active">FAQ</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="icon-btn">
+                <div class="cart-anchor">
+                    <img src="Icon/Shopping-cart.svg" width="24">
+                    <span id="cart-count">2</span>
+                </div>
+            </button>
+            <button class="btn-profile" onclick="window.location.href='profile.html'">
+                <img src="Icon/User.svg"> Profile
+            </button>
+        </div>
+    </nav>
+
+    <section class="faq-hero">
+        <span class="badge">Bantuan</span>
+        <h1 class="gradient-text">Pertanyaan yang Sering Diajukan</h1>
+        <p>Temukan jawaban cepat untuk pertanyaan Anda seputar produk ramah lingkungan kami.</p>
+    </section>
+
+    <section class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Apa itu Edible Herb Sheet?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Edible Herb Sheet adalah lembaran bumbu yang dapat dimakan dan larut saat dimasak. Dibuat dari bahan alami tanpa limbah plastik untuk mendukung gaya hidup berkelanjutan.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Bagaimana cara menanam Plantable Seed Sheet?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Cukup letakkan lembaran di atas tanah, tutup tipis dengan tanah, dan siram secara rutin. Kertas akan terurai secara alami dan benih di dalamnya akan mulai tumbuh.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Apakah pengiriman ke luar kota aman?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Sangat aman! Kami menggunakan kemasan pelindung khusus yang juga ramah lingkungan untuk memastikan produk sampai dalam kondisi sempurna tanpa plastik sekali pakai.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Berapa lama masa simpan produk?</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Untuk Edible Herb Sheet, masa simpan adalah 6-12 bulan jika disimpan di tempat kering. Untuk Seed Sheet, benih tetap optimal untuk ditanam hingga 1 tahun.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <img src="LogoFooter.svg" alt="Logo" class="footer-logo">
+            <p>Copyright ©2026 DuoGreenSheet<br>All rights reserved</p>
+            <div class="social-links">
+                <a href="#"><img src="instagramicon.svg" alt="IG"></a>
+                <a href="#"><img src="TwitterIcon.svg" alt="Twitter"></a>
+                <a href="#"><img src="YoutubeIcon.svg" alt="YT"></a>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Article</a></li>
+                <li><a href="#">Catalog</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#">Help center</a></li>
+                <li><a href="#">Terms of service</a></li>
+                <li><a href="#">Legal</a></li>
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Status</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Stay up to date</h3>
+            <div class="newsletter">
+                <input type="email" placeholder="Your email address">
+                <button type="submit">➤</button>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Logic Accordion
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('open');
+                
+                // Mengubah icon + menjadi -
+                const toggle = item.querySelector('.faq-toggle');
+                toggle.textContent = parent.classList.contains('open') ? '−' : '+';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Duo Green Sheet</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="LogoNavbar.svg">
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="article.html">Article</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="Faq.html">FAQ</a></li>
+    </ul>
+
+    <div class="nav-actions">
+        <button class="icon-btn">
+            <img src="Icon/Shopping-cart.svg">
+        </button>
+        <button class="btn-profile active">
+            <img src="Icon/UserWhite.svg"> Profile
+        </button>
+    </div>
+</nav>
+
+<!-- PROFILE -->
+<main class="profile-page">
+    <aside class="sidebar">
+        <div class="user-avatar">
+            <img src="avatar.svg" alt="User">
+            <button class="camera-btn">
+            <img src="Camera.svg" alt="User" width="20">
+            </button>
+        </div>
+
+        <h3>Habibi Ibnu</h3>
+
+        <nav class="profile-nav">
+            <a href="profile.html">
+                <span class="icon">
+                    <img src="User.svg" alt="Profile">
+                </span>
+                Profile
+            </a>
+
+            <a href="pesanan_profile.html" class="active">
+                <span class="icon">
+                    <img src="Document.svg" alt="Profile">
+                </span> 
+                Pesanan
+            </a>
+
+            <a href="settings.html">
+                <span class="icon">
+                    <img src="Settings-alt.svg" alt="settings">
+                </span> 
+                Settings
+            </a>
+        </nav>
+        <button class="logout-btn" onclick="window.location.href='index.html'">Log Out</button>
+
+    </aside>
+
+    <section class="profile-content">
+        <div class="order-header">
+            <h2 class="section-title">Pesanan Saya</h2>
+            <div class="order-tabs">
+                <button class="tab-btn active">Berlangsung</button>
+                <button class="tab-btn">Selesai</button>
+                <button class="tab-btn">Dibatalkan</button>
+            </div>
+        </div>
+
+        <div class="order-card">
+            <div class="order-card-header">
+                <div class="order-info">
+                    <span class="order-id">INV/20260415/DGS/001</span>
+                    <span class="order-date">15 April 2026</span>
+                </div>
+                <div class="order-status-badge">Sedang Dikemas</div>
+            </div>
+
+            <div class="order-product-list">
+                <div class="product-mini">
+                    <div class="product-thumb"></div><div class="product-detail">
+                        <h4>Edible Herb Sheet</h4>
+                        <p>1 Barang x Rp 100.000</p>
+                    </div>
+                </div>
+                <div class="product-mini">
+                    <div class="product-thumb"></div> <div class="product-detail">
+                        <h4>Plantable Seed Sheet</h4>
+                        <p>1 Barang x Rp 100.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-shipping-info">
+                <div class="shipping-address">
+                    <h5>Alamat Pengiriman</h5>
+                    <p><strong>Habibi Ibnu (+62-8765-4321-123)</strong></p>
+                    <p>Jl. Anggrek No. 12, Kec. Panakkukang, Makassar, 90231</p>
+                </div>
+                <div class="total-payment">
+                    <h5>Total Pembayaran</h5>
+                    <p class="price-total">Rp 200.000</p>
+                </div>
+            </div>
+
+            <div class="order-actions">
+                <button class="btn-outline">Lacak Pesanan</button>
+                <button class="btn-fill">Detail Pesanan</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
