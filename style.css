@@ -1007,6 +1007,52 @@ body {
     transition: 0.2s;
 }
 
+/* Posisi Badge Keranjang */
+.cart-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #3C6C29; /* Warna hijau tua khas brand kamu */
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid white; /* Biar terlihat terpisah dari icon */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.cart-anchor {
+    position: relative; /* KUNCI: Biar span nempel di sini */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart-container-nav {
+    position: relative; /* Kunci badge ke sini */
+    display: flex;
+    align-items: center;
+}
+
+/* Animasi saat angka bertambah */
+.bump {
+    transform: scale(1.3);
+}
+/* Munculkan badge hanya jika angka > 0 */
+#cart-count.active {
+    display: flex;
+}
+
+
 /* ===== DETAIL PRODUK SECTION ===== */
 /* BACK BUTTON */
 .back-btn {
