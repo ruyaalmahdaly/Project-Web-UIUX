@@ -167,45 +167,130 @@
                         <span class="tag-ongkir">Gratis Ongkir</span>
                     </div>
                 </div>
-
                 <!-- PAYMENT METHOD -->
-                <div class="card payment-method">
-                    <h4>Pilih Metode Pembayaran</h4>
+<div class="card payment-method">
+    <h4>Pilih Metode Pembayaran</h4>
 
-                    <div class="dropdown-item">
-                        <div class="dropdown-content">
-                            <img src="Wallet.svg" alt="QRIS" class="qris-logo">
-                            <span>E-Wallet</span>
-                        </div>
-                        <label class="custom-radio">
-                            <input type="radio" name="payment" checked>
-                            <span class="radio-icon"></span>
-                        </label>
-                    </div>
+    <!-- E-WALLET -->
+    <div class="payment-dropdown-box closed" id="ewalletBox">
 
-                    <div class="dropdown-item">
-                        <div class="dropdown-content">
-                            <img src="Bank.svg" alt="Bank" class="Bank-logo">
-                            <span>Bank Transfer</span>
-                        </div>
-                        <label class="custom-radio">
-                            <input type="radio" name="payment" checked>
-                            <span class="radio-icon"></span>
-                        </label>
-                    </div>
+        <div class="payment-dropdown-head" id="ewalletToggle">
+            <div class="dropdown-content">
+                <img src="Wallet.svg" alt="E-Wallet" class="payment-icon">
+                <span>E-Wallet</span>
+            </div>
 
-                    <div class="dropdown-item selected-method">
-                        <div class="dropdown-content">
-                            <img src="QRISLogo.svg" alt="QRIS" class="qris-logo">
-                            <span>QRIS</span>
-                        </div>
+            <img src="Dropdown.svg" alt="dropdown" class="dropdown-icon" id="ewalletArrow">
+        </div>
 
-                        <label class="custom-radio">
-                            <input type="radio" name="payment" checked>
-                            <span class="radio-icon"></span>
-                        </label>
-                    </div>
+        <div class="ewallet-options">
+
+            <label class="payment-option">
+                <div class="payment-option-info">
+                    <img src="GopayLogo.svg" alt="GoPay" class="ewallet-logo">
+                    <span>GoPay</span>
                 </div>
+
+                <input type="radio" name="payment" value="gopay">
+                <span class="radio-icon"></span>
+            </label>
+
+            <label class="payment-option">
+                <div class="payment-option-info">
+                    <img src="ShopeePayLogo.svg" alt="ShopeePay" class="ewallet-logo">
+                    <span>ShopeePay</span>
+                </div>
+
+                <input type="radio" name="payment" value="shopeepay">
+                <span class="radio-icon"></span>
+            </label>
+
+            <label class="payment-option">
+                <div class="payment-option-info">
+                    <img src="DanaLogo.svg" alt="DANA" class="ewallet-logo">
+                    <span>DANA</span>
+                </div>
+
+                <input type="radio" name="payment" value="dana">
+                <span class="radio-icon"></span>
+            </label>
+
+        </div>
+    </div>
+
+    <!-- BANK TRANSFER -->
+    <div class="bank-transfer-dropdown closed" id="bankBox">
+
+        <div class="bank-transfer-head" id="bankTransferToggle">
+            <div class="dropdown-content">
+                <img src="Bank.svg" alt="Bank Transfer" class="payment-icon">
+                <span>Bank Transfer</span>
+            </div>
+
+            <img src="Dropdown.svg" alt="drop up" class="dropdown-icon" id="bankArrow">
+        </div>
+
+        <div class="bank-options">
+
+            <label class="bank-option">
+                <div class="bank-info">
+                    <img src="Mandirilogo.svg" alt="Bank Mandiri" class="bank-logo">
+                    <span>Bank Mandiri</span>
+                </div>
+
+                <input type="radio" name="payment" value="mandiri">
+                <span class="radio-icon"></span>
+            </label>
+
+            <label class="bank-option">
+                <div class="bank-info">
+                    <img src="BRIlogo.svg" alt="Bank BRI" class="bank-logo">
+                    <span>Bank BRI</span>
+                </div>
+
+                <input type="radio" name="payment" value="bri">
+                <span class="radio-icon"></span>
+            </label>
+
+            <label class="bank-option">
+                <div class="bank-info">
+                    <img src="BNIlogo.svg" alt="Bank BNI" class="bank-logo">
+                    <span>Bank BNI</span>
+                </div>
+
+                <input type="radio" name="payment" value="bni">
+                <span class="radio-icon"></span>
+            </label>
+
+        </div>
+    </div>
+
+    <!-- QRIS -->
+    <div class="qris-box">
+
+        <label class="dropdown-item qris-row selected-method" id="qrisRow">
+            <div class="dropdown-content">
+                <img src="QRISLogo.svg" alt="QRIS" class="qris-logo">
+                <span>QRIS</span>
+            </div>
+
+            <input type="radio" name="payment" value="qris">
+            <span class="radio-icon qris-radio-icon"></span>
+        </label>
+
+        <div class="qris-payment-panel" id="qrisPanel">
+            <img src="ScanQris.svg" alt="QR Code Pembayaran" class="qr-code-img">
+
+            <p class="qris-info">Scan QR Code untuk menyelesaikan pembayaran</p>
+
+            <div class="qris-timer">
+                Sisa waktu pembayaran:
+                <span id="qrisCountdown">60:00</span>
+            </div>
+        </div>
+
+    </div>
+</div>
 
                 <!-- SUMMARY -->
                 <div class="card summary-card">
@@ -246,14 +331,148 @@
                         <span class="total-price">Rp. 200.000,00</span>
                     </div>
 
-                    <button class="btn-order">Pesan Sekarang</button>
+                    <button class="btn-order">Konfirmasi Pemesanan</button>
                 </div>
-
+                
             </div>
-
+            <div id="loadingModal" class="modal-overlay" style="display: none;">
+                <div id="modalLoading" class="modal-box">
+                    <div class="spinner"></div>
+                    <p>Tunggu ya...</p>
+                    <h3>Sedang Diproses</h3>
+                </div>
+            </div>
+            <div id="modalSuccess" class="modal-success-content" style="display: none;">
+                <div class="success-icon-container">
+                    <div class="check-badge">
+                        <span class="check-mark">✔</span>
+                    </div>
+                </div>
+                <h3 class="success-text">Pesanan dan Pembayaran Berhasil!</h3>
+                <button class="btn-finish" onclick="window.location.href='pesanan.html'">Selesai</button>
+            </div>
         </div>
-    </div>
+        <script>
+const btnOrder = document.querySelector('.btn-order');
 
+if (btnOrder) {
+    btnOrder.onclick = function () {
+
+        const modal = document.getElementById('loadingModal');
+        const modalLoading = document.getElementById('modalLoading');
+        const modalSuccess = document.getElementById('modalSuccess');
+
+        // tampilkan overlay + loading
+        modal.style.display = 'flex';
+        modalLoading.style.display = 'block';
+        modalSuccess.style.display = 'none';
+
+        // simulasi loading
+        setTimeout(() => {
+
+            // ganti ke sukses
+            modalLoading.style.display = 'none';
+            modalSuccess.style.display = 'block';
+
+        }, 2000);
+    }
+}
+</script>
+<script>
+const ewalletToggle = document.getElementById('ewalletToggle');
+const ewalletBox = document.getElementById('ewalletBox');
+const ewalletArrow = document.getElementById('ewalletArrow');
+
+const bankToggle = document.getElementById('bankTransferToggle');
+const bankBox = document.getElementById('bankBox');
+const bankArrow = document.getElementById('bankArrow');
+
+const qrisRow = document.getElementById('qrisRow');
+const qrisPanel = document.getElementById('qrisPanel');
+const qrisCountdown = document.getElementById('qrisCountdown');
+
+let qrisTimerInterval = null;
+let qrisTimeLeft = 60 * 60;
+
+/* BUKA TUTUP E-WALLET */
+if (ewalletToggle && ewalletBox && ewalletArrow) {
+    ewalletToggle.addEventListener('click', function () {
+        ewalletBox.classList.toggle('closed');
+        ewalletBox.classList.toggle('open');
+
+        if (ewalletBox.classList.contains('closed')) {
+            ewalletArrow.src = 'Dropdown.svg';
+        } else {
+            ewalletArrow.src = 'DropUp.png';
+        }
+    });
+}
+
+/* BUKA TUTUP BANK */
+if (bankToggle && bankBox && bankArrow) {
+    bankToggle.addEventListener('click', function () {
+        bankBox.classList.toggle('closed');
+        bankBox.classList.toggle('open');
+
+        if (bankBox.classList.contains('closed')) {
+            bankArrow.src = 'Dropdown.svg';
+        } else {
+            bankArrow.src = 'DropUp.png';
+        }
+    });
+}
+
+/* TIMER QRIS */
+function startQrisTimer() {
+    clearInterval(qrisTimerInterval);
+
+    qrisTimeLeft = 60 * 60;
+    updateQrisTimer();
+
+    qrisTimerInterval = setInterval(function () {
+        qrisTimeLeft--;
+
+        if (qrisTimeLeft <= 0) {
+            clearInterval(qrisTimerInterval);
+            qrisCountdown.innerText = "00:00";
+            return;
+        }
+
+        updateQrisTimer();
+    }, 1000);
+}
+
+function updateQrisTimer() {
+    const minutes = Math.floor(qrisTimeLeft / 60);
+    const seconds = qrisTimeLeft % 60;
+
+    qrisCountdown.innerText =
+        String(minutes).padStart(2, '0') + ":" + String(seconds).padStart(2, '0');
+}
+
+/* KLIK QRIS */
+if (qrisRow && qrisPanel) {
+    qrisRow.addEventListener('click', function () {
+        const qrisInput = qrisRow.querySelector('input[type="radio"]');
+        qrisInput.checked = true;
+
+        qrisPanel.classList.add('active');
+        startQrisTimer();
+    });
+}
+
+/* KALAU PILIH E-WALLET / BANK, QRIS PANEL TERTUTUP */
+document.querySelectorAll('input[name="payment"]').forEach(function (input) {
+    input.addEventListener('change', function () {
+        if (this.value !== 'qris') {
+            qrisPanel.classList.remove('active');
+            clearInterval(qrisTimerInterval);
+        }
+    });
+});
+</script>
 </body>
+
+
 
 </html>
