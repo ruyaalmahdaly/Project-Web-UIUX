@@ -26,7 +26,10 @@
 
     <div class="nav-actions">
         <button class="icon-btn">
-            <img src="Icon/Shopping-cart.svg">
+            <div class="cart-anchor">
+            <img src="Icon/Shopping-cart.svg" width="24">
+            <span id="cart-count">2</span>
+            </div>
         </button>
         <button class="btn-profile" onclick="window.location.href='profile.html'">
             <img src="Icon/User.svg"> Profile
@@ -146,23 +149,48 @@
     </div>
 </footer>
 <script>
-document.querySelectorAll('.qty').forEach(qtyBox => {
-    const minus = qtyBox.querySelector('.minus');
-    const plus = qtyBox.querySelector('.plus');
-    const count = qtyBox.querySelector('.count');
+let totalInCart = 0;
+const cartDisplay = document.getElementById('cart-count');
 
-    let value = 1;
+// 1. Logika tombol Plus & Minus per produk
+document.querySelectorAll('.catalog-card').forEach(card => {
+    const minus = card.querySelector('.minus');
+    const plus = card.querySelector('.plus');
+    const countDisplay = card.querySelector('.count');
+    const btnCart = card.querySelector('.btn-cart');
+
+    let currentQty = 1; // Default mulai dari 1 sesuai UI kamu
 
     plus.addEventListener('click', () => {
-        value++;
-        count.textContent = value;
+        currentQty++;
+        countDisplay.textContent = currentQty;
     });
 
     minus.addEventListener('click', () => {
-        if (value > 1) {
-            value--;
-            count.textContent = value;
+        if (currentQty > 1) {
+            currentQty--;
+            countDisplay.textContent = currentQty;
         }
+    });
+
+    // 2. Logika Update Navbar saat klik "Masukkan Keranjang"
+    btnCart.addEventListener('click', () => {
+        totalInCart += currentQty;
+        
+        // Update tampilan navbar
+        cartDisplay.textContent = totalInCart;
+
+        // Efek animasi "Pop" pada badge
+        cartDisplay.classList.add('bump');
+        setTimeout(() => {
+            cartDisplay.classList.remove('bump');
+        }, 300);
+
+        // Optional: Reset qty produk kembali ke 1 setelah dimasukkan
+        currentQty = 1;
+        countDisplay.textContent = currentQty;
+        
+        alert('Produk berhasil ditambahkan!');
     });
 });
 </script>
